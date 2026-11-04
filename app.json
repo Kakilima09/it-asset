@@ -1,16 +1,25 @@
 {
   "expo": {
-    "name": "it-asset-pm-mobile",
-    "slug": "it-asset-pm-mobile",
-    "version": "1.0.0",
+    "name": "IT Asset PM",
+    "slug": "it-asset-pm",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "itassetpmmobile",
-    "userInterfaceStyle": "automatic",
+    "scheme": "itassetpm",
+    "userInterfaceStyle": "light",
+    "primaryColor": "#2563eb",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.itassetpm.mobile",
+      "buildNumber": "1",
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.itassetpm.mobile",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -28,9 +37,25 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#2563eb",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Izinkan $(PRODUCT_NAME) mengakses kamera untuk memindai barcode aset.",
+          "barcodeScannerEnabled": true
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
         }
       ]
     ],
